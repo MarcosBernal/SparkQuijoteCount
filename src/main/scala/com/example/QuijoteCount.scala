@@ -13,7 +13,7 @@ object QuijoteCount {
     val quijoteWordOccurrences: Long = quijoteWords.filter(_.matches("Quijote")).count
 
     val quijoteDF: DataFrame = Seq(quijoteWordOccurrences).toDF 
-    quijoteDF.write.save("/tmp/OccurencesOfQuijote/parquet")
-    quijoteDF.write.format("csv").save("/tmp/OccurencesOfQuijote/csv")
+    quijoteDF.coalesce(1).write.save("occurences_quijote/parquet")
+    quijoteDF.coalesce(1).write.format("csv").save("occurences_quijote/csv")
   }
 }

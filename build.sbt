@@ -1,6 +1,6 @@
 organization := "com.example"
 scalaVersion := "2.11.12"
-version      := "0.1.0-SNAPSHOT"
+version      := "1.0"
     
 name := "SparkQuijoteCount"
 
